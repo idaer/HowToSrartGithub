@@ -74,7 +74,7 @@ git config --global user.email "useremail" #用户邮箱
 
 清除Git相关的环境变量,直接卸载
 
-## 四.Git的基本理论
+## 四.Git的基本理论\*
 
 ### 1.工作目录
 
@@ -91,16 +91,23 @@ Git在本地有3个工作区域：**工作目录、暂存区、仓库区**，再
   工作目录——git add files-->暂存区——git commit-->仓库区——git push-->远程仓库
 
   远程仓库——git pull-->仓库区——git reset-->暂存区——git checkout-->工作目录
+  
+  ![img](F:\KonwledgeBase\1352126739_7909.jpg)
 
-### 2.Git的工作流程
+### 2.Git的工作流程\*
 
 Git的一般工作流程
 
 1. 在工作目录中修改
-2. 将需要进行版本管理的文件放入暂存区
-3. 将暂存区域的文件提交到git仓库
+2. 将需要进行版本管理的文件放入暂存区 add
+3. 将暂存区域的文件提交到git仓库 commit
+3. 推送到远程仓库 push
 
 因此。git管理文件有3种状态：已修改（modfied）、已暂存（staged）.已提交（committed）
+
+### 3.分支（Branch）
+
+每个分支类似于单独的链表，而总的分支类似于一棵树。创建新的分支，类似与创建指向这一刻的新的表头。分支这个总的概念更类似于邻接表。但是在项目中总有一个代表主要的main分支（**可以理解为一棵树的主干**）
 
 ## 五.Git项目的搭建
 
@@ -113,25 +120,25 @@ $ git init
 
 执行命令后，项目目录中增加了.git文件夹（隐藏）
 
-### 2.远程克隆仓库(Fork)
+### 2.远程克隆仓库(Clone)
 
 ~~~ shell
 #克隆一个项目和它的完整历史
 $ git clone [url]
 ~~~
 
-## 六.对Git文件操作
+## 六.Git工作流程\*
 
-### 1.将对应文件添加到暂存区
-
-~~~ shell
-$ git add [对应路径]
-~~~
-
-### 2.显示工作目录和暂存区的状态
+### 1.显示工作目录和暂存区的状态
 
 ~~~ shell
 $ git status
+~~~
+
+### 2.将对应文件添加到暂存区
+
+~~~ shell
+$ git add [对应路径]
 ~~~
 
 ### 3.提交暂存区中的修改
@@ -140,32 +147,42 @@ $ git status
 $ git commit [-m]#加入把本次提交的记录说明
 ~~~
 
-### 4. 显示日志
+### 4.推送到远程仓库
 
 ~~~ shell
-$ git log
+$ git push [alias] [branch]
+#将你的 [branch] 分支推送成为 [alias] 远程仓库上的 [branch] 分支
+~~~
+
+### 5.下载远程仓库
+
+~~~ shell
+$ git pull <远程主机名> <远程分支名>:<本地分支名>
 ~~~
 
 
 
-## 七.Github的使用
+### 6. 其他命令\*
+
+~~~ shell
+$ git log #显示git日志
+$ git remote add origin [github中的远程仓库地址] #origin为远程仓库在本地得别名
+$ git config --list #显示git配置
+~~~
 
 
 
-### 1.clone项目
+## 七.Github的使用\*
 
-首先找到需要fork的项目，点击clone。再需要下载该项目的文件夹下右键——Git Bash here，再命令行界面输入命令
+### 1.clone项目（将远程仓库的项目通过Git下载到本地）
+
+首先找到需要clone的项目，点击clone。再需要下载该项目的文件夹下右键——Git Bash here，再命令行界面输入命令
 
 ~~~ shell
 $ git clone [github中的clone地址]
+#从远程仓库下载到本地
 ~~~
 
-### 2.绑定远程仓库
+### 2.创建新项目（远程仓库）
 
-首先在Github中创建一个仓库，获得该仓库连接。再在本地项目文件夹中右键——Git Bash Here，输入命令
-
-~~~ shell
-$ git remote add origin [github中的远程仓库地址]
-~~~
-
-### 3.（）fork
+（一）点击右上角加号，选择new repository
