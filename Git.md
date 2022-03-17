@@ -152,7 +152,7 @@ $ git log
 
 
 
-### 1.clone项目（）fork
+### 1.clone项目
 
 首先找到需要fork的项目，点击clone。再需要下载该项目的文件夹下右键——Git Bash here，再命令行界面输入命令
 
@@ -168,3 +168,4 @@ $ git clone [github中的clone地址]
 $ git remote add origin [github中的远程仓库地址]
 ~~~
 
+### 3.（）fork
