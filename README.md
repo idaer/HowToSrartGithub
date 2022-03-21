@@ -95,7 +95,7 @@ Git在本地有3个工作区域：**工作目录、暂存区、仓库区**，再
 
   远程仓库——git pull-->仓库区——git reset-->暂存区——git checkout-->工作目录
 
-  ![img](F:\KonwledgeBase\1352126739_7909.jpg)
+  ![1352126739_7909.jpg](https://s2.loli.net/2022/03/21/XczNYQwBRPWSA7x.jpg)
 
 ### 2.Git的工作流程\*
 
