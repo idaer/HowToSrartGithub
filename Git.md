@@ -105,9 +105,35 @@ Git的一般工作流程
 
 因此。git管理文件有3种状态：已修改（modfied）、已暂存（staged）.已提交（committed）
 
-### 3.分支（Branch）
+### 3.分支（Branch）\*\*
 
 每个分支类似于单独的链表，而总的分支类似于一棵树。创建新的分支，类似与创建指向这一刻的新的表头。分支这个总的概念更类似于邻接表。但是在项目中总有一个代表主要的main分支（**可以理解为一棵树的主干**）
+#### （1）（master/main）分支
+
+主分支是所有分支的起始，默认下载为主分支。主分支上所有的东西应该处于完成状态
+
+
+#### (2)分支合并
+
+回到主分支[git checkout],在使用命令
+~~~ shell
+$ git merge [branchname] #将[branchname]分支合并到该分支
+#多个分支出现冲突时，放弃合并
+$ git merge --abort
+~~~
+
+#### (3)分支相关的命令
+
+~~~ shell
+#以当前分支为基础创建分支,命名为【branchname】
+$ git checkout -b [branchname]
+#回到指定分支
+$ git checkout [branchname]
+#查看所有分支
+$ git branch
+#删除指定分支
+$ git branch -D [branchname]
+~~~
 
 ## 五.Git项目的搭建
 
@@ -168,6 +194,8 @@ $ git pull <远程主机名> <远程分支名>:<本地分支名>
 $ git log #显示git日志
 $ git remote add origin [github中的远程仓库地址] #origin为远程仓库在本地得别名
 $ git config --list #显示git配置
+$ git checkout [filename] #回滚filename文件的修改，还未提交
+$ git reset HEAD^[number] #退回已经提交的第[number]次修改，退回到暂存区
 ~~~
 
 
