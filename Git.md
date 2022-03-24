@@ -214,3 +214,11 @@ $ git clone [github中的clone地址]
 ### 2.创建新项目（远程仓库）
 
 （一）点击右上角加号，选择new repository
+
+\* 在远程（github）创建仓库时，最好不要自动创建README.md文件。会导致本地和远程仓库commit历史不同而无法提交，解决办法
+
+~~~ shell
+$git pull origin master --allow-unrelated-histories
+#允许无视提交历史不同提交
+~~~
+
